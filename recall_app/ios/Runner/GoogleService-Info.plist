@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>540476119365-c0a05qj7prnis0ubqv4ruvlp6mfm7t9l.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.540476119365-c0a05qj7prnis0ubqv4ruvlp6mfm7t9l</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA3w8FQpKms4k1m1HY0Mn2EzPgtimVmxIw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>540476119365</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.recall.recallApp</string>
+	<key>PROJECT_ID</key>
+	<string>recall-f4094</string>
+	<key>STORAGE_BUCKET</key>
+	<string>recall-f4094.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:540476119365:ios:35765a7be069dad55f062c</string>
+</dict>
+</plist>

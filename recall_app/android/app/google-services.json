@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "540476119365",
+    "project_id": "recall-f4094",
+    "storage_bucket": "recall-f4094.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540476119365:android:1e9bf482b405fdf45f062c",
+        "android_client_info": {
+          "package_name": "com.recall.recall_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "540476119365-rgqcqieaosnnsgmusdb2v3j3qjhin3b2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKS0GhAbKia225Ojmn6NOSIgW2gNGlKxc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "540476119365-rgqcqieaosnnsgmusdb2v3j3qjhin3b2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
