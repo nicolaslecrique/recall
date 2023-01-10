@@ -34,7 +34,7 @@ class _SplashScreenRouteState extends State<SplashScreenRoute> {
   Widget build(BuildContext context) {
     return Scaffold(
       //nb: logo is done with https://cooltext.com/
-      body: Text("loading"),
+      body: Text("splashscreen"),
     );
   }
 }

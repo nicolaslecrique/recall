@@ -1,7 +1,19 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:recall_app/models/server_api.dart';
+
+import 'server.dart';
 
 class UserModel extends ChangeNotifier {
-  Future<void> init() async {}
+  late User authUser;
+
+  // it's called after the currentUser is defined (either at startup of
+  // after login screen)
+  Future<void> init() async {
+    authUser = FirebaseAuth.instance.currentUser!;
+    var jwtToken = await authUser.getIdToken();
+    ServerUser user = await Server.getUser(jwtToken);
+  }
 
   List<Item> getAll() {
     return List.of([
