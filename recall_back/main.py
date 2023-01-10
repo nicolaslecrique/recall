@@ -3,6 +3,8 @@ from api_data import ApiUser
 import firebase_admin
 from firebase_admin import credentials, auth
 
+from db_layer import get_user
+
 app = FastAPI()
 cred = credentials.Certificate("secrets/firebase_service_account_key.json")
 firebase_admin.initialize_app(cred)
@@ -18,6 +20,9 @@ async def get_or_create(authorization: str = Header()):
     id_token = authorization[7:]  # remove "Bearer " prefix
     decoded_token = auth.verify_id_token(id_token)
     uid = decoded_token['uid']
+    get_user(uid)
+
+
 
     return ApiUser(uri="test")
 
