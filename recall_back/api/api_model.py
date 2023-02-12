@@ -6,18 +6,15 @@ from pydantic import BaseModel
 class ApiUserInfo(BaseModel):
     uri: str
 
-
-class ApiItemSnippet(BaseModel):
-    uri: str
+class ApiItemData(BaseModel):
     title: str
     text_content: str
+
+class ApiItem(BaseModel):
+    uri: str
+    data: ApiItemData
     last_modification_date: datetime
-
-
-class ApiItemFullData(BaseModel):
-    snippet: ApiItemSnippet
-
 
 class ApiUserDataSnapshot(BaseModel):
     userInfo: ApiUserInfo
-    items: List[ApiItemSnippet]
+    items: List[ApiItem]

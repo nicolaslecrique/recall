@@ -24,7 +24,7 @@ async def root() -> dict[str, str]:
 @app.get("/user")
 async def get_or_create(authorization: str = Header()) -> ApiUserDataSnapshot:
     id_token: str = authorization[7:]  # remove "Bearer " prefix
-    decoded_token: Dict[str, str] = {"uid": "my_uid", "email": "my_email"}   # auth.verify_id_token(id_token)
+    decoded_token: Dict[str, str] = auth.verify_id_token(id_token)
     uid: str = decoded_token["uid"]
     email: str = decoded_token["email"]
     user_data: UserData = crud_service.get_or_create_user(uid, email)
