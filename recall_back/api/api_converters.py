@@ -1,18 +1,14 @@
 from typing import List
-from api.api_model import ApiItem, ApiItemData, ApiUserDataSnapshot, ApiUserInfo
+from api.api_model import ApiItem, ApiUserDataSnapshot, ApiUserInfo
 from model.model import Item, User, UserData
 
 
 def to_api_item_snippet(item: Item) -> ApiItem:
-    return ApiItem(
-        uri=item.uri,
-        data=ApiItemData(title=item.title, text_content=item.text_content),
-        last_modification_date=item.last_modification_date,
-    )
+    return ApiItem(id=item.id, title=item.title, text_content=item.text_content, last_modification_date=item.last_modification_date)
 
 
 def to_api_user_info(user: User) -> ApiUserInfo:
-    return ApiUserInfo(uri=user.uri)
+    return ApiUserInfo(id=user.id)
 
 
 def to_api_user_data_snapshot(user_data: UserData) -> ApiUserDataSnapshot:

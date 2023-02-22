@@ -5,17 +5,17 @@ from model.model import User, Item, Workspace
 
 
 def to_user(db_user: DbUser) -> User:
-    return User(firebase_auth_uid=db_user.firebase_auth_uid, uri=db_user.uri, email=db_user.email)
+    return User(id=db_user.id, firebase_auth_uid=db_user.firebase_auth_uid, email=db_user.email)
 
 
 def to_item(db_item: DbItem) -> Item:
     return Item(
-        uri=db_item.uri,
+        id=db_item.id,
         title=db_item.title,
         text_content=db_item.text_content,
-        last_modification_date=db_item.last_modification_datetime,
+        last_modification_date=db_item.last_modification_date,
     )
 
 
 def to_workspace(db_workspace: DbWorkspace) -> Workspace:
-    return Workspace(uri=db_workspace.uri)
+    return Workspace(id=db_workspace.id)

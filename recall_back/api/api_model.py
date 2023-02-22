@@ -1,18 +1,16 @@
 from datetime import datetime
 from typing import List
+from uuid import UUID
 from pydantic import BaseModel
 
 
 class ApiUserInfo(BaseModel):
-    uri: str
-
-class ApiItemData(BaseModel):
-    title: str
-    text_content: str
+    id: UUID
 
 class ApiItem(BaseModel):
-    uri: str
-    data: ApiItemData
+    id: UUID
+    title: str
+    text_content: str
     last_modification_date: datetime
 
 class ApiUserDataSnapshot(BaseModel):
