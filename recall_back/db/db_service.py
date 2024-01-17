@@ -4,8 +4,8 @@ from sqlalchemy import create_engine, select
 from sqlalchemy.orm import Session
 
 from db.db_converters import to_user, to_item, to_workspace
-from db.db_model import *
 from model.model import UserData, Workspace, WorkspaceData, User
+from recall.recall_back.db.db_model import DbItem, DbUser, DbWorkspace, DbWorkspaceMember
 
 
 class DbService:
@@ -35,8 +35,8 @@ class DbService:
 
     def create_user_and_workspace(self, user: User, workspace: Workspace):
         with Session(self.engine) as session:
-            db_workspace = DbWorkspace(uri=workspace.uri)
-            db_user = DbUser(firebase_auth_uid=user.firebase_auth_uid, uri=user.uri, email=user.email)
+            db_workspace = DbWorkspace(id=workspace.id)
+            db_user = DbUser(firebase_auth_uid=user.firebase_auth_uid, id=user.id, email=user.email)
             session.add(db_workspace)
             session.add(db_user)
             session.flush()

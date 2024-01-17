@@ -1,8 +1,8 @@
 from typing import Optional
+import uuid
 
 from db.db_service import DbService
 from model.model import User, UserData, Workspace, WorkspaceData
-from tools.uri_utils import generate_uri
 
 
 class CrudService:
@@ -13,8 +13,7 @@ class CrudService:
         if user_data is not None:
             return user_data
         else:
-            user_uri: str = generate_uri(email)
-            user = User(firebase_auth_ui, user_uri, email)
-            workspace = Workspace(generate_uri(f"default_{user_uri}"))
+            user = User(firebase_auth_ui, uuid.uuid4(), email)
+            workspace = Workspace(uuid.uuid4())
             self.db.create_user_and_workspace(user, workspace)
             return UserData(user, [WorkspaceData(workspace, [])])

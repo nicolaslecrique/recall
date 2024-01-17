@@ -1,5 +1,3 @@
-from typing import List
-
 from db.db_model import DbUser, DbItem, DbWorkspace
 from model.model import User, Item, Workspace
 

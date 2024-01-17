@@ -1,23 +1,24 @@
 from datetime import datetime
 from dataclasses import dataclass
 from typing import List
+from uuid import UUID
 
 
 @dataclass
 class User:
     firebase_auth_uid: str
-    uri: str
+    id: UUID
     email: str
 
 
 @dataclass
 class Workspace:
-    uri: str
+    id: UUID
 
 
 @dataclass
 class Item:
-    uri: str
+    id: UUID
     title: str
     text_content: str
     last_modification_date: datetime
