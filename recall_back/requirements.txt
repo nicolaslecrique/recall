@@ -1,4 +1,4 @@
-fastapi==0.89.0
+fastapi==0.109.0
 uvicorn[standard]==0.20.0
 firebase-admin==6.3.0
 sqlalchemy==2.0.25

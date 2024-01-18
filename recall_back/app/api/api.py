@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 from fastapi import APIRouter, Depends, Header
-from firebase_admin import auth # type: ignore
+from firebase_admin import auth
 
 from api.api_converters import to_api_user_data_snapshot
 from api.api_model import ApiUserDataSnapshot
@@ -23,8 +23,8 @@ class UserIdentity:
 
 async def get_identity(authorization: str = Header()) -> UserIdentity:
     id_token: str = authorization[7:]  # remove "Bearer " prefix
-    decoded_token: dict[str, str] = auth.verify_id_token(id_token) # type: ignore
-    return UserIdentity(decoded_token["uid"], decoded_token["email"]) # type: ignore
+    decoded_token = auth.verify_id_token(id_token)
+    return UserIdentity(decoded_token["uid"], decoded_token["email"])
 
 
 @router.get("/user")

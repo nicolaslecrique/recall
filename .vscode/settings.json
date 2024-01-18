@@ -1,0 +1,4 @@
+{
+    "python.analysis.extraPaths": ["${workspaceFolder}/recall_back/typings", "${workspaceFolder}/recall_back/app"],
+    "python.defaultInterpreterPath": "${workspaceFolder}/recall_back/venv/bin/python"
+}

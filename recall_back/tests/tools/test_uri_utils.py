@@ -1,5 +1,5 @@
 from unittest import TestCase
-from tools.uri_utils import generate_uri
+from app.tools.uri_utils import generate_uri
 
 
 class TestUriUtils(TestCase):

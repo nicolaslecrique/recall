@@ -2,7 +2,7 @@ from datetime import datetime
 from uuid import UUID
 
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy import ForeignKey, MetaData
+from sqlalchemy import ForeignKey, MetaData, PrimaryKeyConstraint
 from sqlalchemy.orm import declarative_base
 
 DbBase = declarative_base(metadata=MetaData(schema="recall_db_schema"))
@@ -38,8 +38,13 @@ class DbUser(DbBase):
 class DbWorkspaceMember(DbBase):
     __tablename__ = "workspace_member"
 
-    workspace_id: Mapped[UUID] = mapped_column(ForeignKey("workspace.id"))
-    user_id: Mapped[UUID] = mapped_column(ForeignKey("user.id"))
+    workspace_id: Mapped[UUID] = mapped_column(ForeignKey("workspace.id"), primary_key=True)
+    user_id: Mapped[UUID] = mapped_column(ForeignKey("user.id"), primary_key=True)
+
+    # Define the composite primary key constraint
+    __table_args__ = (
+        PrimaryKeyConstraint(workspace_id, user_id),
+    )
 
     def __init__(self, workspace_id: UUID, user_id: UUID):
         self.workspace_id = workspace_id
@@ -48,6 +53,8 @@ class DbWorkspaceMember(DbBase):
     workspace: Mapped["DbWorkspace"] = relationship(back_populates="members")
     user: Mapped["DbUser"] = relationship(back_populates="workspace_memberships")
     created_items: Mapped[list["DbItem"]] = relationship(back_populates="creator")
+
+    
 
 
 class DbItem(DbBase):

@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from db.db_converters import to_user, to_item, to_workspace
 from model.model import UserData, Workspace, WorkspaceData, User
-from recall.recall_back.db.db_model import DbItem, DbUser, DbWorkspace, DbWorkspaceMember
+from db.db_model import DbItem, DbUser, DbWorkspace, DbWorkspaceMember
 
 
 class DbService:

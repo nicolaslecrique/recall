@@ -1,4 +1,8 @@
-# MVP Specification
+## Problem
+
+I want to keep notes and find them.
+
+## MVP features
 
 * Android
 * Login
