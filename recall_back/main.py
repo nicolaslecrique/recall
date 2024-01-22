@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 import firebase_admin
-from firebase_admin import credentials
+from firebase_admin.credentials import Certificate
 from app.api import api
 import uvicorn
 
 
 app = FastAPI()
-#cred = credentials.Certificate("secrets/firebase_service_account_key.json")
-#firebase_admin.initialize_app(cred)
+cert: Certificate = Certificate("recall_back/secrets/firebase_service_account_key.json")
+firebase_admin.initialize_app(cert)
 
 app.include_router(api.router)
 
